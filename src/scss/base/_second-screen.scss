@@ -1,0 +1,50 @@
+.second-screen {
+    background-image: url('../img/second-bg.webp');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.second-screen__slogan {
+    font-family: $accent-font;
+    font-size: 2.3vh;
+    width: 39%;
+    margin: 3vh auto 10vh;
+
+    & img {
+        vertical-align: middle;
+    }
+}
+
+.second-screen__block {
+    width: 68%;
+    margin-left: auto;
+}
+
+.second-screen__title {
+    text-align: center;
+    margin-bottom: 5vh;
+    text-transform: uppercase;
+    font-size: 3vh;
+}
+
+.second-screen__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    font-size: 2vh;
+}
+
+.second-screen__item {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    margin-bottom: 5vh;
+    padding-right: 1vh;
+
+    & img {
+        margin-right: 2vh;
+    }
+}

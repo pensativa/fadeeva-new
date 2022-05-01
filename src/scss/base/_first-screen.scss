@@ -1,0 +1,41 @@
+.first-screen {
+    background-image: url('../img/first-bg.webp');
+    background-position: right top;
+    background-size: cover;
+}
+
+.first-screen__wrapper {
+    position: relative;
+    height: auto;
+    margin-top: 12vh;
+
+    & .header__button {
+        font-size: 1.8vw;
+        padding: 1.5vw 5vw 1.6vw;
+        margin: 5vh 0 0 6vw;
+        transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 0s;
+    }
+}
+
+.first-screen__title {
+    font-size: 8vw;
+    line-height: 1;
+
+    & .bottom {
+        display: block;
+        color: $prime-color;
+        margin-left: 3vw;
+    }
+}
+
+.rirst-screen__slogan {
+    position: absolute;
+    top: 150px;
+    left: 23vw;
+    width: 14vw;
+    font-size: 1.4vw;
+    font-family: $title-font;
+    padding-left: 28px;
+    margin-left: 28px;
+    border-left: 6px solid #E5E5E5;
+}
