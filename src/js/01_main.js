@@ -3,21 +3,11 @@ const pageSlider = new Swiper(".swiper-container", {
     speed: 1000,
     parallax: true,
     autoplay: false,
-    effect: "creative",
-    creativeEffect: {
-        prev: {
-          shadow: true,
-          origin: "left center",
-          translate: ["-5%", 0, -200],
-          rotate: [0, 100, 0],
-        },
-        next: {
-          origin: "right center",
-          translate: ["5%", 0, -200],
-          rotate: [0, -100, 0],
-        },
-      },
+    effect: "fade",
     mousewheel: true,
+    keyboard: {
+        enabled: true,
+    },
     simulateTouch: false,
     init: false,
     navigation: {
@@ -105,3 +95,14 @@ pageSlider.init();
         }
     });
 })();
+
+//Reviews 
+
+var swiper2 = new Swiper(".review", {
+    effect: "cards",
+    grabCursor: true,
+    navigation: {
+        nextEl: ".swiper-next",
+        prevEl: ".swiper-prev",
+    },
+});

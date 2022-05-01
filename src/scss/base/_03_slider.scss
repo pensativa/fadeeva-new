@@ -8,7 +8,7 @@ body {
   position: relative;
   overflow: hidden;
 
-  & .swiper-wrapper {
+  & .swiper-container > .swiper-wrapper {
     height: 100vh;
     width: 100vw;
   }
