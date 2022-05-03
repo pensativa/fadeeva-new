@@ -48,3 +48,15 @@
         margin-right: 2vh;
     }
 }
+
+@media (min-width: 2000px) {
+    .second-screen__title{
+        font-size: 2vw;
+    }
+    .second-screen__list {
+      font-size: 1.2vw;
+    }
+    .second-screen__item img {
+        min-width: 4vw;
+    }
+  }

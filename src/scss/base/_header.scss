@@ -45,3 +45,13 @@
 .header__button {
     transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 0s;
 }
+
+@media (min-width: 2000px) {
+    .header__logo {
+        width: 20vw;
+    }
+    .main-nav__link {
+        padding: 0.5vw;
+        font-size: 1.5vw;
+    }
+}

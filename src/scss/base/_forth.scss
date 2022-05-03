@@ -156,3 +156,19 @@
 .forth-screen__body-footer {
     text-align: center;
 }
+
+@media (min-width: 2000px) {
+    .forth-screen__body {
+      max-width: 60%;
+    }
+    .forth-screen__body-list {
+        width: 100%;
+    }
+    .forth-screen__body-item {
+      font-size: 1.4vw;
+
+      & img {
+        min-width: 4vw;
+      }
+    }
+  }

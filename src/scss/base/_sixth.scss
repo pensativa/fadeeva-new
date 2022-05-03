@@ -106,3 +106,16 @@ textarea.six-screen__form-input {
     font-size: 14px;
     margin: 5vh auto 0;
 }
+
+@media (min-width: 2000px) {
+    .six-screen__form-label {
+      font-size: 1.3vw;
+    }
+    .six-screen__form-prim {
+        font-size: 1vw;
+    }
+    .six-screen__form-input {
+        height: 2.2vw;
+        font-size: 1.3vw;
+    }
+  }

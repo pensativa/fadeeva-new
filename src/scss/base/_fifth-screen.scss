@@ -60,7 +60,6 @@
             font-size: 16px;
             overflow: auto;
             scrollbar-width: none;
-            //Ulla Maijan
 
             &::-webkit-scrollbar {
                 display: none;
@@ -130,3 +129,27 @@
 .swiper-prev {
     transform: translateX(-100%) rotate(-90deg);
 }
+
+@media (min-width: 2000px) {
+    .swiper-next, .swiper-prev {
+        width: 4vw;
+        height: 4vw;
+    }
+
+    .review {
+        width: 50%;
+        height: 77%;
+    }
+
+    .review__title {
+        font-size: 1.4vw;
+    }
+
+    .review__slide.swiper-slide-active .review__body {
+        font-size: 1vw;
+    }
+
+    .review__name {
+        font-size: 1.8vw;
+    }
+  }
