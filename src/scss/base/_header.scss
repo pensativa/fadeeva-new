@@ -55,3 +55,14 @@
         font-size: 1.5vw;
     }
 }
+
+@media (max-width: 1370px) {
+    .header__logo {
+        width: 20vw;
+    }
+
+    .main-nav__link {
+        padding: 5px;
+        font-size: 18px;
+    }
+}

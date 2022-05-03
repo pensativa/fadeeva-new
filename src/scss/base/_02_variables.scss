@@ -85,3 +85,9 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 6vw 30px 0;
   }
 }
+
+@media (max-width: 1370px) {
+  .wrapper {
+    padding: 120px 30px 0 5.2vw;
+  }
+}

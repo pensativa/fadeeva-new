@@ -1,6 +1,6 @@
 .six-screen {
     background-image: url('../img/fifth-bg.webp');
-    background-position: right top;
+    background-position: left top;
     background-size: cover;
 }
 
@@ -118,4 +118,14 @@ textarea.six-screen__form-input {
         height: 2.2vw;
         font-size: 1.3vw;
     }
-  }
+}
+
+@media (max-width: 1370px) {
+    .six-screen__title {
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+    }
+    .six-screen__form {
+        width: 60%;
+    }
+}

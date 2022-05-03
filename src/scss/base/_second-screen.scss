@@ -60,3 +60,13 @@
         min-width: 4vw;
     }
   }
+
+  @media (max-width: 1370px) {
+    .second-screen {
+        background-position: top left 45%;
+    }
+    .second-screen__slogan {
+        width: 45%;
+        margin: 3vh auto 5vh;
+    }
+}
