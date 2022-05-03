@@ -22,6 +22,18 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+a {
+  color: $text-color;
+  transition: 0.3;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $prime-color;
+    text-shadow: 0px 0px 20px #FBAD03;
+  }
+}
+
 a[class] {
   text-decoration: none;
 }

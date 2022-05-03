@@ -1,0 +1,110 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 0;
+
+    & .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3vh 0;
+    }
+}
+
+.footer__name {
+    font-family: $accent-font;
+    font-size: 300%;
+    line-height: 1;
+    text-shadow: 0px 4px 4px rgba(100, 71, 7, 0.57);
+    transition: 0.3s;
+}
+
+.footer__socials {
+    list-style: none;
+    padding: 0 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    transition: 1s;
+
+    & svg {
+        width: 40px;
+        height: 40px;
+        transition: 0.3s;
+    }
+}
+
+.footer__socials-item {
+
+    &:hover svg,
+    &:focus svg,
+    &:active svg {
+        fill: $prime-color;
+    }
+}
+
+.footer__email,
+.footer__callback {
+    font-size: 30px;
+    font-weight: bold;
+    transition: transform 0.8s;
+
+    &::before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.footer__email::before {
+    background-image: url('../img/mail.svg');
+}
+
+.footer__callback::before {
+    background-image: url('../img/tel.svg');
+    animation: pulse 0.5s ease infinite alternate;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1) rotate(0);
+      box-shadow: 0 1px 2px rgba(255,255,255,.8);
+    }
+    50% {
+      transform: scale(1.05) rotate(-15deg);
+      box-shadow: 0 4px 20px rgba(255,255,255,.4);
+    }
+    100% {
+      transform: scale(1.1) rotate(-30deg);
+      box-shadow: 0 4px 40px rgba(255,255,255,.2);
+    }
+}
+
+.footer--slider {
+    .footer__name,
+    .footer__email {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    .footer__socials {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        flex-direction: column;
+        width: auto;
+        height: 220px;
+    }
+}

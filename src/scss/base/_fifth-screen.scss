@@ -12,7 +12,7 @@
 
 .review__slide {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     background: url('../img/overlay.webp') no-repeat center/cover;
     border-radius: 25px;
     box-shadow: inset 0px 7px 11px -4px rgba(255, 255, 255, 0.5), inset 0px 98px 100px -48px rgba(100, 71, 7, 0.3), inset 0px 1px 40px rgba(251, 173, 3, 0.3);
@@ -55,10 +55,12 @@
         .review__body {
             display: block;
             width: 50%;
+            max-height: 100%;
             padding-left: 4%;
             font-size: 16px;
             overflow: auto;
             scrollbar-width: none;
+            //Ulla Maijan
 
             &::-webkit-scrollbar {
                 display: none;
@@ -72,6 +74,7 @@
         .review__img {
             width: 50%;
             height: auto;
+            max-height: 100%;
         }
     }
 }
