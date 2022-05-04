@@ -10,6 +10,13 @@
     }
 }
 
+.header__logo {
+    transform: scale(0);
+    transform-origin: left center;
+    opacity: 0;
+    transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 0.5s;
+}
+
 .main-nav {
     position: relative;
     display: flex;
@@ -25,6 +32,32 @@
     padding: 0 3vw;
     flex: 1 1 auto;
     justify-content: flex-end;
+
+    & li {
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12);
+
+        &:nth-of-type(1) {
+            transition-delay: 0.5s;
+        }
+
+        &:nth-of-type(2) {
+            transition-delay: 1s;
+        }
+
+        &:nth-of-type(3) {
+            transition-delay: 1.5s;
+        }
+
+        &:nth-of-type(4) {
+            transition-delay: 2s;
+        }
+
+        &:nth-of-type(5) {
+            transition-delay: 2.5s;
+        }
+    }
 }
 
 .main-nav__link {
@@ -43,7 +76,29 @@
 }
 
 .header__button {
-    transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 0s;
+    transform: scale(0);
+    opacity: 0;
+    transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 2s;
+}
+
+.header__mobile-menu {
+    display: none;
+}
+
+//Animation
+.loaded {
+    & .header__logo {
+        transform: scale(1);
+        opacity: 1;
+    }
+    & .main-nav__menu li {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    & .header__button {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @media (min-width: 2000px) {
@@ -66,3 +121,73 @@
         font-size: 18px;
     }
 }
+
+@media (max-width: $mobile-width), (orientation: portrait) {
+    .header .wrapper {
+      padding: 24px;
+    }
+
+    .header__mobile-menu {
+        display: block;
+    }
+
+    .header__phone {
+        width: 40px;
+        height: 40px;
+        background: url('../img/phone-alt.svg') no-repeat center;
+        font-size: 0;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    .header__mobile-burger {
+        @include no-btn();
+        width: 40px;
+        height: 40px;
+        margin-left: 15px;
+        background: url('../img/menu.svg') no-repeat center;
+        transition: 0.3s ease-in-out;
+
+        &.open {
+            transform: rotate(0.5turn);
+            background-image: url('../img/cross.svg');
+        }
+    }
+
+    .main-nav__menu,
+    .header .header__button {
+        display: none;
+    }
+
+    .header.open {
+        height: 100vh;
+        background-color: #000;
+        
+        & .main-nav {
+            flex-wrap: wrap;
+            height: 100%;
+            align-content: baseline;
+        }
+
+        & .header__phone {
+            font-weight: bold;
+            font-size: 26px;
+            width: auto;
+            background: none;
+        }
+
+        & .main-nav__menu {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            text-align: right;
+            height: 55%;
+            margin-top: 7vh;
+            justify-content: space-between;
+        }
+
+        & .main-nav__link {
+            font-size: 6vh;
+        }
+    }
+  }

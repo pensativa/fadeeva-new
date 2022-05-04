@@ -3,7 +3,8 @@ const pageSlider = new Swiper(".swiper-container", {
     speed: 1000,
     parallax: true,
     autoplay: false,
-    effect: "fade",
+    effect: changeSliderEffect(),
+    freeMode: changeSliderMode(),
     mousewheel: true,
     keyboard: {
         enabled: true,
@@ -19,12 +20,17 @@ const pageSlider = new Swiper(".swiper-container", {
             menuSlider();
             headerButtonMove();
             showFullFooter();
+            document.querySelector('body').classList.add('loaded');
+            changeSliderEffect();
         },
         slideChange: function () {
             menuSlider();
             headerButtonMove();
             showFullFooter();
         },
+        resize: function () {
+            changeSliderEffect();
+        }
     },
 });
 
@@ -78,6 +84,22 @@ function showFullFooter() {
     }
 }
 
+
+//Mobile version
+function changeSliderEffect() {
+    if (window.innerWidth < 1024 || window.innerHeight > window.innerWidth) {
+        return 'slide';
+    } else {
+        return 'fade';
+    } 
+}
+function changeSliderMode() {
+    if (window.innerWidth < 1024 || window.innerHeight > window.innerWidth) {
+        return true;
+    } else {
+        return false;
+    }
+}
 pageSlider.init();
 
 //Prices
@@ -141,4 +163,20 @@ document.querySelector('.review').addEventListener('wheel', e => {
             }
         };
     });
+})();
+
+//Mobile menu
+
+(function() {
+    const menuToggle = document.querySelector('.header__mobile-burger');
+    header = document.querySelector('.header')
+
+    menuToggle.onclick = function() {
+        menuToggle.classList.toggle('open');
+        if (menuToggle.classList.contains('open')) {
+            header.classList.add('open');
+        } else {
+            header.classList.remove('open');
+        }
+    }
 })();
