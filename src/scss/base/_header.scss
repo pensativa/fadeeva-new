@@ -81,7 +81,8 @@
     transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 2s;
 }
 
-.header__mobile-menu {
+.header__mobile-menu,
+.header__socials {
     display: none;
 }
 
@@ -114,6 +115,7 @@
 @media (max-width: 1370px) {
     .header__logo {
         width: 20vw;
+        min-width: 150px;
     }
 
     .main-nav__link {
@@ -189,5 +191,22 @@
         & .main-nav__link {
             font-size: 6vh;
         }
+
+        & .header__socials {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            padding: 0;
+            width: 220px;
+            margin-top: 5vh;
+            height: 20%;
+            align-items: flex-end;
+        }
+    }
+  }
+
+  @media (max-width: 520px) {
+    .header.open .header__logo {
+        display: none;
     }
   }

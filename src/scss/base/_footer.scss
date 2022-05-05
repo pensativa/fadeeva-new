@@ -17,7 +17,7 @@
 
 .footer__name {
     font-family: $accent-font;
-    font-size: 300%;
+    font-size: 250%;
     line-height: 1;
     text-shadow: 0px 4px 4px rgba(100, 71, 7, 0.57);
     transition: 0.3s;
@@ -41,19 +41,20 @@
     & svg {
         width: 40px;
         height: 40px;
+        fill: $text-color !important;
         transition: 0.3s;
     }
 
     &:hover svg,
     &:focus svg,
     &:active svg {
-        fill: $prime-color;
+        fill: $prime-color !important;
     }
 }
 
 .footer__email,
 .footer__callback {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bold;
     transition: transform 0.8s;
 
@@ -182,5 +183,11 @@
 
     .footer__socials {
         width: 160px;
+    }
+}
+
+@media (max-width: $mobile-width), (orientation: portrait) {
+    .footer--slider  {
+        display: none;
     }
 }

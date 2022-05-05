@@ -1,5 +1,5 @@
 .first-screen {
-    background-image: url('../img/first-bg.webp');
+    background-image: url('../img/about-n.webp');
     background-position: right top;
     background-size: cover;
 }
@@ -76,5 +76,27 @@
 @media (max-width: 1370px) {
     .first-screen__slogan {
         left: 27vw;
+    }
+}
+
+@media (max-width: $mobile-width), (orientation: portrait) {
+    .first-screen {
+        background-image: url('../img/about-mobile.webp');
+    }
+
+    .first-screen__title {
+        font-size: 13vw;
+    }
+
+    .first-screen__slogan {
+        position: static;
+        padding-left: 0;
+        margin-left: 0;
+        border-left: none;
+        padding-top: 10px;
+        margin-top: 10px;
+        border-top: 3px solid $text-color;
+        width: 65%;
+        font-size: 4vw;
     }
 }

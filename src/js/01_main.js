@@ -1,5 +1,6 @@
 const pageSlider = new Swiper(".swiper-container", {
     direction: "vertical",
+    slidesPerView: 'auto',
     speed: 1000,
     parallax: true,
     autoplay: false,
