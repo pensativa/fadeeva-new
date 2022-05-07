@@ -59,6 +59,10 @@ for (let i = 0; i < menuLinks.length; i+=1) {
         menuSliderRemove();
         menuLinks[i].classList.add('active');
         pageSlider.slideTo(i, 1000);
+        if (document.querySelector('.header').classList.contains('open')) {
+            document.querySelector('.header').classList.remove('open');
+            document.querySelector('.header__mobile-burger').classList.remove('open');
+        }
   }
 }
 
@@ -170,7 +174,7 @@ document.querySelector('.review').addEventListener('wheel', e => {
 
 (function() {
     const menuToggle = document.querySelector('.header__mobile-burger');
-    header = document.querySelector('.header')
+    const header = document.querySelector('.header')
 
     menuToggle.onclick = function() {
         menuToggle.classList.toggle('open');
@@ -179,5 +183,11 @@ document.querySelector('.review').addEventListener('wheel', e => {
         } else {
             header.classList.remove('open');
         }
+    }
+
+    if(window.pageYOffset > 0) {
+      header.classList.add('scroll');
+    } else {
+      header.classList.remove('scroll');
     }
 })();

@@ -10,6 +10,9 @@
     font-size: 2.3vh;
     width: 39%;
     margin: 3vh auto 10vh;
+    transform: scale(0);
+    transform-origin: left center;
+    transition: 2s cubic-bezier(0.1, 0.39, 0, 1.12);
 
     & img {
         vertical-align: middle;
@@ -26,6 +29,9 @@
     margin-bottom: 5vh;
     text-transform: uppercase;
     font-size: 3vh;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 2s cubic-bezier(0.1, 0.39, 0, 1.12) 0.5s;
 }
 
 .second-screen__list {
@@ -43,13 +49,55 @@
     align-items: center;
     margin-bottom: 5vh;
     padding-right: 1vh;
+    transform: translateY(-100%);
+    opacity: 0;
+
+    &:nth-of-type(1) {
+        transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 1s;
+    }
+
+    &:nth-of-type(2) {
+        transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 1.3s;
+    }
+
+    &:nth-of-type(3) {
+        transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 1.6s;
+    }
+
+    &:nth-of-type(4) {
+        transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 1.9s;
+    }
+
+    &:nth-of-type(5) {
+        transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 2.2s;
+    }
+
+    &:nth-of-type(6) {
+        transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12) 2.5s;
+    }
 
     & img {
         margin-right: 2vh;
     }
 }
 
-//.swiper-slide-active
+//Animation
+
+.swiper-slide-active.second-screen {
+    .second-screen__slogan {
+        transform: scale(1);
+    }
+
+    .second-screen__title {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .second-screen__item {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 @media (min-width: 2000px) {
     .second-screen__title{
@@ -64,11 +112,70 @@
   }
 
   @media (max-width: 1370px) {
-    .second-screen {
-        background-position: top left 45%;
-    }
     .second-screen__slogan {
         width: 45%;
         margin: 3vh auto 5vh;
+    }
+}
+
+@media (max-width: $mobile-width), (orientation: portrait) {
+    .second-screen {
+        background-size: auto 100%;
+        background-position: left center;
+    }
+    .second-screen__slogan {
+        transform: scale(1);
+    }
+
+    .second-screen__title {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .second-screen__item {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    .second-screen {
+        background-size: auto 150%;
+        background-position: right center;
+    }
+
+    .second-screen__slogan {
+        min-width: 210px;
+        width: 60%;
+        font-size: 15px;
+        margin: 0 0 5vh;
+    }
+
+    .second-screen__block {
+        width: 100%;
+    }
+
+    .second-screen__title {
+        font-size: 22px;
+        width: 365px;
+        max-width: 100%;
+        margin: 0 auto 7vh;
+    }
+
+    .second-screen__item {
+        margin-bottom: 5vh;
+        padding-right: 0;
+        min-width: 300px;
+        max-width: 100%;
+        font-size: 16px;
+
+        & img {
+            max-width: 36px;
+            margin-right: 20px;
+        }
+    }
+
+    .second-screen__list {
+        justify-content: space-evenly;
     }
 }

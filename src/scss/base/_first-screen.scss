@@ -82,6 +82,13 @@
 @media (max-width: $mobile-width), (orientation: portrait) {
     .first-screen {
         background-image: url('../img/about-mobile.webp');
+        min-height: 100vh;
+
+        & .header__button {
+            font-size: 18px;
+            padding: 10px 30px 9px;
+            margin: 5vh 0 0 0;
+        }
     }
 
     .first-screen__title {
@@ -98,5 +105,11 @@
         border-top: 3px solid $text-color;
         width: 65%;
         font-size: 4vw;
+    }
+}
+
+@media (max-width: 520px) {
+    .first-screen .header__button {
+        font-size: 14px;
     }
 }

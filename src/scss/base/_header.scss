@@ -161,6 +161,10 @@
         display: none;
     }
 
+    .header.scroll {
+        background-color: #000;
+    }
+
     .header.open {
         height: 100vh;
         background-color: #000;
@@ -208,5 +212,9 @@
   @media (max-width: 520px) {
     .header.open .header__logo {
         display: none;
+    }
+
+    .header.open .header__phone {
+        font-size: 24px;
     }
   }

@@ -85,4 +85,18 @@ body {
   .slider .swiper-button-prev {
     display: none;
   }
+
+  .slider {
+    height: 100%;
+    width: 100%;
+  
+    & .swiper-container > .swiper-wrapper {
+      height: 100%;
+      width: 100%;
+    }
+    
+    & .swiper-slide {
+      min-height: 102vh;
+    }
+  }
 }
