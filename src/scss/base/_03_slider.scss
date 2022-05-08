@@ -88,15 +88,15 @@ body {
 
   .slider {
     height: 100%;
-    width: 100%;
+    width: 100vw;
   
-    & .swiper-container > .swiper-wrapper {
+    & > .swiper-container > .swiper-wrapper {
       height: 100%;
       width: 100%;
-    }
     
-    & .swiper-slide {
-      min-height: 102vh;
+      & > .swiper-slide {
+        min-height: 102vh;
+      }
     }
   }
 }

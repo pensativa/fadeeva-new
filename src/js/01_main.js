@@ -10,7 +10,7 @@ const pageSlider = new Swiper(".swiper-container", {
     keyboard: {
         enabled: true,
     },
-    simulateTouch: false,
+    //simulateTouch: false,
     init: false,
     navigation: {
         nextEl: ".swiper-button-next",
@@ -135,9 +135,16 @@ pageSlider.init();
 })();
 
 //Reviews 
+function changeEffect() {
+    if (window.innerWidth < 1024 || window.innerHeight > window.innerWidth) {
+        return 'slide';
+    } else {
+        return 'cards';
+    } 
+}
 
 var swiper2 = new Swiper(".review", {
-    effect: "cards",
+    effect: changeEffect(),
     grabCursor: true,
     navigation: {
         nextEl: ".swiper-next",
@@ -183,11 +190,5 @@ document.querySelector('.review').addEventListener('wheel', e => {
         } else {
             header.classList.remove('open');
         }
-    }
-
-    if(window.pageYOffset > 0) {
-      header.classList.add('scroll');
-    } else {
-      header.classList.remove('scroll');
     }
 })();

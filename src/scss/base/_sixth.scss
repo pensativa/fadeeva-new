@@ -12,6 +12,9 @@
     margin-top: 7vh;
     text-align: right;
     text-transform: uppercase;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: 1s cubic-bezier(0.1, 0.39, 0, 1.12);
 }
 
 .six-screen__form {
@@ -23,6 +26,8 @@
     min-width: 300px;
     margin-left: auto;
     position: relative;
+    transform: scale(0) rotate(360deg);
+    transition: 2s cubic-bezier(0.1, 0.39, 0, 1.12) 1s;
 
     &::before {
         content: "";
@@ -107,6 +112,17 @@ textarea.six-screen__form-input {
     margin: 5vh auto 0;
 }
 
+//Animation
+.swiper-slide-active.six-screen {
+    .six-screen__title {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .six-screen__form {
+        transform: scale(1) rotate(0);
+    }
+}
+
 @media (min-width: 2000px) {
     .six-screen__form-label {
       font-size: 1.3vw;
@@ -127,5 +143,61 @@ textarea.six-screen__form-input {
     }
     .six-screen__form {
         width: 60%;
+    }
+}
+
+@media (max-width: $mobile-width), (orientation: portrait) {
+    .six-screen {
+        padding-bottom: 100px;
+    }
+    .six-screen__title {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .six-screen__form {
+        transform: scale(1) rotate(0);
+    } 
+}
+
+@media (max-width: 992px) {
+    .six-screen__title {
+        font-size: 26px;
+        max-width: 50%;
+    }    
+}
+
+@media (max-width: 765px) {
+    .six-screen {
+        padding-bottom: 130px;
+        background-position: right center;
+    }
+    .six-screen__title {
+        font-size: 22px;
+        max-width: 100%;
+        width: 300px;
+        margin: 20px auto;
+        text-align: center;
+    } 
+    .six-screen__form {
+        width: 100%;
+        min-width: auto;
+    }   
+}
+
+@media (max-width: 550px) {
+    .six-screen {
+        padding-bottom: 180px;
+    }
+    .six-screen__form-item {
+        flex-basis: 100%;
+    }
+    .six-screen__form-item:first-of-type {
+        margin-right: 0;
+    }
+    .six-screen__form-label {
+        font-size: 14px;
+    }
+    .six-screen__form-prim {
+        font-size: 12px;
     }
 }
