@@ -12,6 +12,10 @@
     width: 80%;
     margin-left: auto;
     margin-top: 20vh;
+    opacity: 0;
+    transform: translateY(-100%);
+    transform-origin: top center;
+    transition: 2s cubic-bezier(0.1, 0.39, 0, 1.12);
 }
 
 .forth-screen__item {
@@ -157,6 +161,14 @@
     text-align: center;
 }
 
+//Animation
+.swiper-slide-active.forth-screen {
+    .forth-screen__list {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 @media (min-width: 2000px) {
     .forth-screen__body {
       max-width: 60%;
@@ -170,5 +182,79 @@
       & img {
         min-width: 4vw;
       }
+    }
+  }
+
+  @media (max-width: $mobile-width), (orientation: portrait) {
+    .forth-screen__list {
+        margin: 10vh auto 0;
+        min-width: 520px;
+        max-width: 100%;
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .forth-screen__list {
+        width: 100%;
+        min-width: auto;
+    }
+    .forth-screen__item {
+        padding: 15px 0;
+    }
+    .forth-screen__header {
+        padding-right: 35px;
+
+        &::after {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .forth-screen__header .title,
+    .forth-screen__header .prise {
+        font-size: 16px;
+    }
+
+    .forth-screen__header.new::before {
+        width: 50px;
+        height: 50px;
+        bottom: -9px;
+        z-index: -1;
+        left: -29px;
+    }
+    .forth-screen__body-header {
+        margin-bottom: 7vh;
+
+        & h4 {
+            font-size: 22px;
+            max-width: calc(100% - 50px);
+            margin: 0 auto;
+        }
+    }
+    .forth-screen__body-close {
+        width: 50px;
+    }
+    .forth-screen__body-list {
+        width: 100%;
+        justify-content: space-evenly;
+        min-width: auto;
+    }
+    .forth-screen__body-item {
+        font-size: 16px;
+        width: 300px;
+        max-width: 100%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .forth-screen__header .prise, 
+    .forth-screen__header .title {
+        font-size: 14px;
+    }
+
+    .forth-screen__header .prise {
+        white-space: nowrap;
+        margin-left: 10px;
     }
   }
