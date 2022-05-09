@@ -2,15 +2,14 @@ const pageSlider = new Swiper(".swiper-container", {
     direction: "vertical",
     slidesPerView: 'auto',
     speed: 1000,
-    parallax: true,
-    autoplay: false,
     effect: changeSliderEffect(),
     freeMode: changeSliderMode(),
     mousewheel: true,
     keyboard: {
         enabled: true,
     },
-    //simulateTouch: false,
+    simulateTouch: true,
+    touchEventsTarget: 'container',
     init: false,
     navigation: {
         nextEl: ".swiper-button-next",
@@ -55,10 +54,12 @@ function menuSlider() {
 //Стили по клику
 for (let i = 0; i < menuLinks.length; i+=1) {
     menuLinks[i].onclick = function(e) {
-        e.preventDefault();
         menuSliderRemove();
-        menuLinks[i].classList.add('active');
-        pageSlider.slideTo(i, 1000);
+        if (window.innerWidth > 1024 || window.innerHeight < window.innerWidth) {
+            e.preventDefault();
+            menuLinks[i].classList.add('active');
+            pageSlider.slideTo(i, 1000);
+        }
         if (document.querySelector('.header').classList.contains('open')) {
             document.querySelector('.header').classList.remove('open');
             document.querySelector('.header__mobile-burger').classList.remove('open');
@@ -159,8 +160,10 @@ document.querySelector('.review').addEventListener('wheel', e => {
 (function(){
     const showFormButton = document.querySelector('.header__button');
     showFormButton.onclick = function(e) {
-        e.preventDefault();
-        pageSlider.slideTo(5, 1000);
+        if (window.innerWidth > 1024 || window.innerHeight < window.innerWidth) {
+            e.preventDefault();
+            pageSlider.slideTo(5, 1000);
+        }
     };
 })();
 
@@ -192,3 +195,27 @@ document.querySelector('.review').addEventListener('wheel', e => {
         }
     }
 })();
+
+/*var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
+    V = 1;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
+for (var i = 0; i < linkNav.length; i++) {
+    linkNav[i].addEventListener('click', function(e) { //по клику на ссылку
+        e.preventDefault(); //отменяем стандартное поведение
+        var w = window.pageYOffset,  // производим прокрутка прокрутка
+            hash = this.href.replace(/[^#]*(.*)/, '$1');  // к id элемента, к которому нужно перейти
+        t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
+            start = null;
+        requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
+        function step(time) {
+            if (start === null) start = time;
+            var progress = time - start,
+                r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
+            window.scrollTo(0,r);
+            if (r != w + t) {
+                requestAnimationFrame(step)
+            } else {
+                location.hash = hash  // URL с хэшем
+            }
+        }
+    }, false);
+}*/

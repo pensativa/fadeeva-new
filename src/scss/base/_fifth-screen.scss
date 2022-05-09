@@ -201,7 +201,8 @@
         bottom: 10px;
     }
 
-    .review__slide .review__img {
+    .review__slide .review__img,
+    .review__slide.swiper-slide-active .review__img {
         width: auto;
         height: auto;
     }
@@ -214,6 +215,7 @@
 
     .review__slide {
         flex-wrap: wrap;
+        align-items: stretch;
     }
 
     .review__img {

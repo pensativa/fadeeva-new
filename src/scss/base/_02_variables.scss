@@ -39,6 +39,10 @@ a[class] {
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 img {
   max-width: 100%;
   height: auto;
