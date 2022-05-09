@@ -1,4 +1,4 @@
-const pageSlider = new Swiper(".swiper-container", {
+const pageSlider = new Swiper(".slider", {
     direction: "vertical",
     slidesPerView: 'auto',
     speed: 1000,
@@ -143,10 +143,18 @@ function changeEffect() {
         return 'cards';
     } 
 }
+function changeHight() {
+    if (window.innerWidth < 1024 || window.innerHeight > window.innerWidth) {
+        return true;
+    } else {
+        return false;
+    } 
+}
 
 var swiper2 = new Swiper(".review", {
     effect: changeEffect(),
     grabCursor: true,
+    autoHeight: changeHight(),
     navigation: {
         nextEl: ".swiper-next",
         prevEl: ".swiper-prev",
@@ -196,26 +204,14 @@ document.querySelector('.review').addEventListener('wheel', e => {
     }
 })();
 
-/*var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
-    V = 1;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
-for (var i = 0; i < linkNav.length; i++) {
-    linkNav[i].addEventListener('click', function(e) { //по клику на ссылку
-        e.preventDefault(); //отменяем стандартное поведение
-        var w = window.pageYOffset,  // производим прокрутка прокрутка
-            hash = this.href.replace(/[^#]*(.*)/, '$1');  // к id элемента, к которому нужно перейти
-        t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
-            start = null;
-        requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
-        function step(time) {
-            if (start === null) start = time;
-            var progress = time - start,
-                r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
-            window.scrollTo(0,r);
-            if (r != w + t) {
-                requestAnimationFrame(step)
-            } else {
-                location.hash = hash  // URL с хэшем
-            }
-        }
-    }, false);
-}*/
+//Footer mobile ver
+(function() {
+    if (window.innerWidth < 1024 || window.innerHeight > window.innerWidth) {
+        const footer = document.querySelector('.footer .wrapper');
+        const fragment = document.createDocumentFragment();
+	    fragment.appendChild(footer);
+        document.querySelector('.six-screen .wrapper').appendChild(fragment);
+    } else {
+        document.querySelector('.footer').appendChild(fragment);
+    }
+})();

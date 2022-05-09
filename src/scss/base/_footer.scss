@@ -179,6 +179,7 @@
     .footer__callback, 
     .footer__email {
         font-size: 20px;
+        white-space: nowrap;
     }
 
     .footer__socials {
@@ -189,10 +190,11 @@
 @media (max-width: $mobile-width), (orientation: portrait) {
     .footer--slider,
     .footer  {
-        position: absolute;
+        //position: static;
+        background: #a39f9b;
     }
     .footer--slider .footer__socials,
-    .footer__socials {
+    .six-screen .footer__socials {
         position: static;
         width: 160px;
         height: auto;
@@ -200,12 +202,16 @@
         transform: translateY(0);
     }
     .footer--slider .footer__email, 
-    .footer--slider .footer__name {
+    .footer--slider .footer__name,
+    .six-screen .footer__email, 
+    .six-screen .footer__name {
         transform: translateY(0);
         opacity: 1;
+        white-space: nowrap;
     }
 
-    .footer .wrapper {
+    .six-screen .wrapper .wrapper{
+        display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
     }

@@ -8,7 +8,7 @@ body {
   position: relative;
   overflow: hidden;
 
-  & .swiper-container > .swiper-wrapper {
+  & > .swiper-wrapper {
     height: 100vh;
     width: 100vw;
   }
@@ -90,12 +90,13 @@ body {
     height: 100%;
     width: 100%;
   
-    & > .swiper-container > .swiper-wrapper {
-      height: 100%;
+    & > .swiper-wrapper {
+      //height: 100%;
       width: 100%;
     
       & > .swiper-slide {
         min-height: 102vh;
+        height: auto;
       }
     }
   }
